@@ -7,12 +7,10 @@ import GoogleProvider from 'next-auth/providers/google'
 
 function getGoogleCredentials() {
 
-    // console.log(process.env.GOOGLE_CLIENT_ID);
-    // console.log("614422335126")
+
     const clientId = process.env.GOOGLE_CLIENT_ID;
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET
-    // console.log("GOOGLE CLIENT ID")
-    // console.log(process.env.GOOGLE_CLIENT_ID);
+
     if (!clientId || clientId.length === 0) {
         throw new Error('Missing GOOGLE_CLIENT_ID')
     }
