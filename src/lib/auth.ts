@@ -2,12 +2,18 @@ import { NextAuthOptions } from 'next-auth'
 import { UpstashRedisAdapter } from '@next-auth/upstash-redis-adapter'
 import { db } from './db'
 import GoogleProvider from 'next-auth/providers/google'
-// import { fetchRedis } from '@/helpers/redis'
+
+
 
 function getGoogleCredentials() {
     const clientId = '614422335126-g412205iliftmqrio6k8l6rjgknv9g8i.apps.googleusercontent.com'
     const clientSecret = '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'
-
+    // console.log(process.env.GOOGLE_CLIENT_ID);
+    // console.log("614422335126")
+    // const clientId = process.env.GOOGLE_CLIENT_ID;
+    // const clientSecret = process.env.GOOGLE_CLIENT_SECRET
+    // console.log("GOOGLE CLIENT ID")
+    // console.log(process.env.GOOGLE_CLIENT_ID);
     if (!clientId || clientId.length === 0) {
         throw new Error('Missing GOOGLE_CLIENT_ID')
     }
