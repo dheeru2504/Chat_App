@@ -8,6 +8,8 @@ import GoogleProvider from 'next-auth/providers/google'
 function getGoogleCredentials() {
 
 
+
+
     const clientId = process.env.GOOGLE_CLIENT_ID;
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET
 
