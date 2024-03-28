@@ -60,10 +60,11 @@ export async function POST(req: Request) {
     //     'new_friend',
     //     friend
     //   ),
-    // db.sadd(`user:${session.user.id}:friends`, idToAdd),
-    // db.sadd(`user:${idToAdd}:friends`, session.user.id),
-    // db.srem(`user:${session.user.id}:incoming_friend_requests`, idToAdd),
+    //   db.sadd(`user:${session.user.id}:friends`, idToAdd),
+    //   db.sadd(`user:${idToAdd}:friends`, session.user.id),
+    //   db.srem(`user:${session.user.id}:incoming_friend_requests`, idToAdd),
     // ])
+
     db.sadd(`user:${session.user.id}:friends`, idToAdd)
     db.sadd(`user:${idToAdd}:friends`, session.user.id)
     db.srem(`user:${session.user.id}:incoming_friend_requests`, idToAdd)

@@ -18,6 +18,7 @@ export async function POST(req: Request) {
       `user:email:${emailToAdd}`
     )) as string
 
+    console.log("idTOAdd - ", idToAdd);
     if (!idToAdd) {
       return new Response('This person does not exist.', { status: 400 })
     }
@@ -66,7 +67,7 @@ export async function POST(req: Request) {
     //     senderEmail: session.user.email,
     //   }
     // )
-
+    console.log(idToAdd)
     await db.sadd(`user:${idToAdd}:incoming_friend_requests`, session.user.id)
 
     return new Response('OK')
